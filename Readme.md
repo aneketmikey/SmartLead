@@ -2,12 +2,12 @@ This is the SMARTLEAD assignment done by ANEKET
 
 **How to use**
 
-git clone the repository
-run npm install
-fill .env file with your configuration credentials
-make a smartlead database in your postgres database
-run npm start
-go to : http://localhost:3000/api-docs to access the APIs through swagger
+- git clone the repository
+- run npm install
+- fill .env file with your configuration credentials
+- make a smartlead database in your postgres database
+- run npm start
+- go to : http://localhost:3000/api-docs to access the APIs through swagger
 
 API Endpoints:
 save user data in DB : http://localhost:3000/api/v1/user-details
