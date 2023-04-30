@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "deep-email-validator": "^0.1.21",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mailgen": "^2.0.27",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0",
+    "prettier": "^2.8.8",
+    "sequelize": "^6.31.0",
+    "swagger-ui-express": "^4.6.2",
+    "yamljs": "^0.3.0",
+    "yup": "^1.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start-dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  description: "This is a Smart Lead server made by Aneket"
+  version: "1.0.0"
+  title: "Smartlead API Docs"
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Local Server
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+basePath: "/"
+tags:
+  - name: User
+    description:  User Data in  Database
+  - name: Email
+    description:  Email Data to be saved in Database and sent to recipents
+paths:
+  /user-details:
+   post:
+      tags:
+        - User
+      summary: Save User Data to Database
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+               type: object
+
+            example: { name: "Vaibhav Namburi",
+                    email: "vnamburi@smartleadscale.org",
+                    user_name: "vnamburi@smartleadscale.org",
+                    password: "sg#2cxEi3Jo@ZX2f!4",
+                    smtp_host: "smtp.zoho.com.au",
+                    smtp_port: 465,
+                    smtp_encryption: "SSL",
+                    message_per_day: 40,
+                    minimum_time_gap: 20,
+                    imap_host: "imap.zoho.com.au",
+                    imap_port: 993,
+                    imap_encryption: "SSL"}
+      responses: 
+        '200':
+          description: User details saved successfully
+          schema:
+            type: object
+      
+ 
+  /user-details/{userId}:
+    get:
+      tags:
+        - User
+      summary: Returns user data by user ID.
+      description: Returns the Specific User details
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type : integer
+      responses: 
+        '200':
+          description: User details fetched successfully
+          schema:
+            type: object
+      
+
+
+  /send-mail/{userId}:
+   post:
+      tags:
+       - Email
+      summary: Send Mail .
+      description: Send Email to all recepients specified
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type : integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+               type: object
+        
+            example: { 
+                email_to : ["testingmail@yopmail.com"],
+                cc : ["testingmail2@yopmail.com"],
+                bcc: [],
+                subject: "Hi There",
+                body: "This is the email body" }
+
+      responses: 
+        '200':
+          description: Email sent successfully
+          schema:
+            type: object
+            
