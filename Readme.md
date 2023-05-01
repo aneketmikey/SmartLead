@@ -2,17 +2,17 @@ This is the SMARTLEAD assignment done by ANEKET
 
 **How to use**
 
-git clone the repository
-run npm install
-fill .env file with your configuration credentials
-make a smartlead database in your postgres database
-run npm start
-go to : http://localhost:3000/api-docs to access the APIs through swagger
+- git clone the repository
+- run npm install
+- fill .env file with your configuration credentials
+- make a smartlead database in your postgres database
+- run npm start
+- go to : http://localhost:3000/api-docs to access the APIs through swagger
 
 API Endpoints:
-save user data in DB : http://localhost:3000/api/v1/user-details
-get a particular user data from DB  :  http://localhost:3000/api/v1/user-details/1
-send mail by a particular user : http://localhost:3000/api/v1/send-mail/1
+- save user data in DB : http://localhost:3000/api/v1/user-details
+- get a particular user data from DB  :  http://localhost:3000/api/v1/user-details/1
+- send mail by a particular user : http://localhost:3000/api/v1/send-mail/1
 
 Features implemented
 - When a user clicks save it should send this data to the backend and store the fields within a database
