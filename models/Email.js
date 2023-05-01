@@ -31,6 +31,9 @@ export const Email = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    Status: {
+      type: DataTypes.STRING,
+    },
   },
   {
     freezeTableName: true,
